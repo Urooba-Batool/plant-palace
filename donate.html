@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plants Palace</title>
+    <!-- box icons link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- customization css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/donate.css">
+    <!-- customization css link -->
+    <link rel="stylesheet" href="css/feedback.css" />
+    <link rel="stylesheet" href="css/star.css">
+    <link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+    <!-- Add a div with a class of page-loader -->
+    <div class="page-loader">
+        <img src="img/LOADER.gif" alt="Loading..." />
+    </div>
+  
+    <!-- loader div -->
+    <div class="content">   
+    <!-- header section -->
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo navLogo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+                    <i class='bx bx-x sidebarCloser'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <!-- Plants Dropdown -->
+                    <li class="dropdown">
+                        <a href="#">Plants</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="indoor.html">Indoor Plants</a></li>
+                            <li><a href="outdoor.html">Outdoor Plants</a></li>
+                            <li><a href="flower.html">Flower Plants</a></li>
+                            <li><a href="climber.html">CLimbers Plants</a></li>
+                            <li><a href="ground.html">Ground Covers</a></li>
+                        </ul>
+                    </li>
+                    <!-- Pots Dropdown -->
+                    <li class="dropdown">
+                        <a href="#">Pots</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ceramic.html">Ceramic Pots</a></li>
+                            <li><a href="plastic.html">Plastic Pots</a></li>
+                            <li><a href="clay.html">Clay Pots</a></li>
+                            <li><a href="concrete.html">Concrete Pots</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="seeds.html">Seeds</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="donate.html"><i class='bx bxs-donate-blood icon' style="font-size: 23px;" "></i></a></li>
+                    <li><a href="addCart.html"><i class='bx bx-shopping-bag icon' style="font-size: 23px;"></i></a></li>
+                    <li><a href="login-signip.html"><i class='bx bxs-user-circle icon' style="font-size: 23px;" "></i></a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bxs-moon moon '></i>
+                    <i class='bx bxs-sun sun'></i>
+                </div>
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search search'></i>
+                    </div>
+                    <div class="search-field">
+                        <input type="text" placeholder="search....">
+                        <i class='bx bx-search'></i>
+                    </div>            
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- header section ends -->
+    <!-- Donate Section -->
+    <div class="donate-section">
+        <div class="donate-full-banner">
+            <div class="donate-banner">
+                <h1 style="color: #d1f3d7;">Welcome to Our Donation Page</h1>
+                <div style="background-color: #235347;">
+                    <p>Your small contribution can make a big difference.</p>
+                </div>
+            </div>
+        </div>
+        <div class="donate-container" style="height: 700px;">
+            <h1 style="color: #235347;">Donate for Planting</h1>
+            <form id="donationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="donationType">Select Donation Type:</label>
+                <select id="donationType" name="donationType" required>
+                    <option value="">--Select--</option>
+                    <option value="money">Donate Money</option>
+                    <option value="plant">Donate a Plant</option>
+                </select>
+
+                <div id="moneyDonation" class="donate-hidden">
+                    <label for="amount">Amount ($):</label>
+                    <input type="number" id="amount" name="amount" min="1">
+                </div>
+
+                <div id="plantDonation" class="donate-hidden">
+                    <label for="plantType">Plant Type:</label>
+                    <input type="text" id="plantType" name="plantType">
+                </div>
+
+                <button type="submit">Donate</button>
+            </form>
+
+            <div id="message" class="donate-hidden"></div>
+        </div>
+    </div>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <p>Plant Palace is your one-stop shop for all things green! From vibrant plants to stylish pots and essential gardening tools, we have everything you need to create your own indoor paradise.</p>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="seeds.html">Seeds</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html">Donation</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p><i class='bx bxs-phone'></i> +123-456-7890</p>
+            <p><i class='bx bxs-envelope'></i> info@plantpalace.com</p>
+            <p><i class='bx bxs-map'></i> 123 Street, ABC City, XYZ</p>
+            <div class="socials">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Plant Palace | All Rights Reserved</p>
+    </div>
+</footer>
+<!-- footer section ends -->
+ <!-- loader div end -->
+</div>
+
+
+
+<!-- customization js link -->
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/loader.js"></script>
+
+    <!-- chatbot cdn link -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/4575466c-91fe-413b-a908-42f659d5d234/webchat/v2.1/config.js"></script>
+  
+
+
+<!-- customization js link -->
+<script src="js/script.js"></script>
+<script src="js/donate.js"></script>
+
+</body>
+</html>
+    
+</body>
+</html>

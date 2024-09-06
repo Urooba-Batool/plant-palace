@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Furniture Store</title>
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+/>
+<!-- box icons link -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="css/aboutus.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- custom js -->
+ <script src="js/animation.js"></script>
+    <!-- icon link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+
+<!-- customization css link -->
+<link rel="stylesheet" href="css/feedback.css" />
+<link rel="stylesheet" href="css/star.css">
+<link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+<!-- Add a div with a class of page-loader -->
+<div class="page-loader">
+    <img src="img/LOADER.gif" alt="Loading..." />
+  </div>
+<!-- loader div -->
+<div class="content">
+   <!-- start header -->
+    <div class="full_page">
+        
+  <!-- header section -->
+  <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen'></i>
+        <span class="logo navLogo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+                <i class='bx bx-x sidebarCloser'></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- Plants Dropdown -->
+                <li class="dropdown">
+                    <a href="#">Plants</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="indoor.html">Indoor Plants</a></li>
+                        <li><a href="outdoor.html">Outdoor Plants</a></li>
+                        <li><a href="flower.html">Flower Plants</a></li>
+                        <li><a href="climber.html">CLimbers Plants</a></li>
+                        <li><a href="ground.html">Ground Covers</a></li>
+                    </ul>
+                </li>
+                <!-- Pots Dropdown -->
+                <li class="dropdown">
+                    <a href="#">Pots</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ceramic.html">Ceramic Pots</a></li>
+                        <li><a href="plastic.html">Plastic Pots</a></li>
+                        <li><a href="clay.html">Clay Pots</a></li>
+                        <li><a href="concrete.html">Concrete Pots</a></li>
+                    </ul>
+                </li>
+                <li><a href="seeds.html">Seeds</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html"><i class='bx bxs-donate-blood icon' style="font-size: 23px;" ></i></a></li>
+                <li><a href="cart.html" id="cart-icon"><i class='bx bx-shopping-bag icon' style="font-size: 23px;"></i>
+                    <span id="cart-count">0</span>
+                    </a>
+                <li><a href="login-signip.html"><i class='bx bxs-user-circle icon' style="font-size: 23px;" ></i></a></li>
+            </ul>
+        </div>
+
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bxs-moon moon '></i>
+                <i class='bx bxs-sun sun'></i>
+            </div>
+            <div class="searchBox">
+                <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                </div>
+                <div class="search-field">
+                    <input type="text" placeholder="search....">
+                    <i class='bx bx-search'></i>
+                </div>            
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- header section ends -->
+        
+    <!-- end header -->
+<script>
+                 document.addEventListener('DOMContentLoaded', () => {
+    const serviceContents = document.querySelectorAll('.banner-heading');
+    const checkScroll = () => {
+        serviceContents.forEach(content => {
+            const rect = content.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const isVisible = rect.top <= viewportHeight && rect.bottom >= 0;
+
+            if (isVisible) {
+                content.classList.add('visible');
+            } 
+        });
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Initial check
+    
+});
+
+</script>
+    <div class="aboutus_section ">
+        <div class="container">
+            <div class="row website">
+                <div class="col-lg-6 col-md-6">
+                    <div class="aboutus_content website" style="">
+                        <h1 style="color:#8EB69B;">About Us</h1>
+                        <p style="color:#8EB69B;">Welcome to Plant Palace, your go-to destination for all things green and growing! At Plant Palace, we believe that plants are more than just decorations—they’re a way to bring life, beauty, and tranquility into any space. Our journey began with a simple love for nature and a desire to share that love with others. Whether you're a seasoned gardener or just starting to explore the joys of indoor plants, we're here to support and inspire you every step of the way.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-1">
+                    <div class="slider_body">
+                        <div class="slider">
+                            <div class="sliderimg">
+                                <span style="--i:1"><img src="img/aboutus/aboutus1.jpg" /></span>
+                                <span style="--i:2"><img src="img/aboutus/aboutus2.jpg" /></span>
+                                <span style="--i:3"><img src="img/aboutus/aboutus3.jpg" /></span>
+                                <span style="--i:4"><img src="img/aboutus/aboutus4.jpg" /></span>
+                                <span style="--i:5"><img src="img/aboutus/aboutus5.jpg" /></span>
+                                <span style="--i:6"><img src="img/aboutus/aboutus6.jpg" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- products -->
+
+ <!-- our mission -->
+<div class="aboutus_information website" style="padding-bottom: 150px;">
+<div class="container">
+    <div class="row " id="aboutus_info">
+            <div class="aboutus_mission_content  website mt-0 ">
+                <h1 class="mt-5" style="font-size: 40px; font-weight: 700;"> Our Mission</h1>
+               
+                <div class="missions">
+                    <p>
+                At Plant Palace, our mission is to cultivate a greener world by 
+                providing high-quality plants and gardening solutions to enthusiasts 
+                of all levels. We are dedicated to inspiring and empowering our
+                 customers to embrace the joys of gardening, foster a deeper connection 
+                 with nature, and contribute to a healthier environment. Through our 
+                 curated selection of plants, educational resources, and community support,
+                  we strive to make gardening accessible, enjoyable, and impactful.
+                    </p>
+                </div>
+            </br>
+            </div>
+            
+        
+
+        <div class="aboutus_info_pic ">
+            <img src="img/aboutus/ourmission/ourmission.jpg" alt="" style="width: 100%; height: 400px;">
+        </div>
+    </div>
+</div></div>
+
+
+<!-- Why Choose Us -->
+<div class="aboutus_information website" style="padding-bottom: 150px;">
+    <div class="container">
+        <div class="row " id="aboutus_info">
+            <div class="aboutus_info_pic ">
+                <img src="img/aboutus/why_choose_us/wcu.jpg" alt="" width="100%">
+            </div>
+                <div class="aboutus_mission_content  website mt-0 ">
+                    <h1 style="font-size: 40px; font-weight: 700;">Why Choose us ? </h1>
+                   
+                    <div class="choose">
+                        <ul>
+                    <li style="font-size: 16px;">Passion and Expertise: Our team is passionate about plants and knowledgeable in all 
+                        aspects of plant care, ensuring you receive the best advice and support.</li>
+                   
+                    <li style="font-size: 16px;"> Community Focused: We strive to build a community where plant enthusiasts can connect,
+                         share experiences, and learn from one another.
+                    </li>
+                   
+                    <li style="font-size: 16px;">Customer Satisfaction: Your satisfaction is our top priority. We go the extra mile to ensure you 
+                        have a positive experience, from browsing our selection to receiving your plants at home.</li>
+                     <li style="font-size: 16px;">Service: Help in choosing the best plants for your needs.
+                        </li>
+                    <li style="font-size: 16px;">Support: Expert advice, care tips, and resources.</li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+ 
+
+    <!-- our Promise -->
+<div class="aboutus_information website">
+    <div class="container">
+        <div class="row " id="aboutus_info">
+                <div class="aboutus_promise_content  website mt-0 ">
+                    <h1 style="font-size: 40px; font-weight: 700;"> Our Promise</h1>
+                   
+                    <div class="promise">
+                        <ul>
+                            <li style="font-size: 16px;">Sustainable Sourcing : Our plants are sourced sustainably and responsibly, ensuring that your purchase supports eco-friendly practices.
+
+                            </li>
+
+                            <li style="font-size: 16px;"> Expert Guidance : We provide ongoing support and expert advice to help you care for your plants, from the moment they arrive to years down the line.
+
+                            </li>
+
+                            <li style="font-size: 16px;">Vision: Help create lush indoor jungles, peaceful offices, or cozy home corners.
+                            </li>
+
+                    
+                        </ul>
+                        
+                    </div>
+                
+                </div>
+                
+            
+    
+            <div class="aboutus_info_pic_promise ">
+                <img src="img/aboutus/promises/promise.png" alt="" width="100%" >
+            </div>
+        </div>
+    </div>
+    </div>
+<section id="team" class="section">
+    <div class="container">
+        <h2 class="text-center mb-5 website">Meet Our Team</h2>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 ">
+                <div class="card team-member website">
+                    <img src="img/aboutus/meeetourteam/girl.png" class="card-img-top" alt="Team Member 1" height="350px" >
+                    <div class="card-body text-center">
+                        <h5 class="card-title">ZARA</h5>
+                        <p class="card-text">Founder & CEO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member website ">
+                    <img src="img/aboutus/meeetourteam/girl.jpg" class="card-img-top" alt="Team Member 2" height="350px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">MIRAAL</h5>
+                        <p class="card-text">Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card team-member website">
+                    <img src="img/aboutus/meeetourteam/man.png" class="card-img-top" alt="Team Member 3" height="350px">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">SAAD</h5>
+                        <p class="card-text">Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <p>Plant Palace is your one-stop shop for all things green! From vibrant plants to stylish pots and essential gardening tools, we have everything you need to create your own indoor paradise.</p>
+        </div>
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="seeds.html">Seeds</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html">Donation</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p><i class='bx bxs-phone'></i> +123-456-7890</p>
+            <p><i class='bx bxs-envelope'></i> info@plantpalace.com</p>
+            <p><i class='bx bxs-map'></i> 123 Street, ABC City, XYZ</p>
+            <div class="socials">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-twitter'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Plant Palace | All Rights Reserved</p>
+    </div>
+</footer>
+<!-- footer section ends -->
+<!-- loader div end -->
+</div>
+
+
+
+<!-- customization js link -->
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/loader.js"></script>
+
+    <!-- chatbot cdn link -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/4575466c-91fe-413b-a908-42f659d5d234/webchat/v2.1/config.js"></script>
+  
+<!-- customization js link -->
+<script src="js/product.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

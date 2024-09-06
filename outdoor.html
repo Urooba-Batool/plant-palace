@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>plants</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <!-- icon link -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- cs -->
+  <link rel="stylesheet" href="../homepage/header.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- box icons link -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<!-- js -->
+  <script src="js/product.js"></script>
+ 
+ <style>
+
+    #cart-icon {
+      position: absolute;
+      margin-top:20px;
+      margin-bottom:10px;
+      right: 20px;
+      background-color: rgb(71, 41, 3);
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #cart-icon span {
+      margin-left: 5px;
+      font-weight: bold;
+    }
+    #products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      gap: 20px;
+      color: var(--second-text-color);
+    }
+    @media (width<768px){
+      #products{
+        grid-template-columns: repeat(1,1fr);
+       margin: 40px 10px;
+       width: 100%;
+
+      }
+      
+    }
+    
+    .product {
+      border: 1px solid #ddd;
+      text-align: center;
+padding-bottom: 30px;
+    }
+    .product img {
+      width: 95%;
+      height: 500px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .product-div{
+      width: 95%;
+      margin-left: 35px;
+      margin-top: 20px;
+    }
+
+    @media(width< 760px)
+     {
+        
+    
+        .sidenav a 
+        {font-size: 18px;}
+
+  #cart-icon{
+  left: 140px;
+  position: relative;
+  border-radius: 0px;
+  background-color: transparent;
+}
+#cart-count{
+  color:rgb(227, 192, 146);
+}
+    }
+    @media(width>760px){
+      .responsive_design_box{
+        display: none;
+      }
+      
+    }
+.btn-details{
+  height: 40px;
+  width: 120px;
+  border-radius: 10px;
+  background-color: var(--btn-color);
+  color: var(--second-text-color);
+}
+.btn-details:hover{
+  background-color: var(--second-text-color);
+  color:var(--btn-color);
+}
+.btn-details {
+  transition: all 0.3s ease-in-out 0s;
+}
+
+
+  #sortSelect{
+    margin-left: 1300px;
+  }
+  @media (max-width:768px) , (max-width:1024px){
+    #sortSelect{
+      margin-left: 260px;
+    }
+  }
+  </style>
+<!-- customization css link -->
+<link rel="stylesheet" href="css/feedback.css" />
+<link rel="stylesheet" href="css/star.css">
+<link rel="stylesheet" href="css/style1.css">
+</head>
+<body>
+<!-- Add a div with a class of page-loader -->
+<div class="page-loader">
+    <img src="img/LOADER.gif" alt="Loading..." />
+</div>
+<!-- loader div -->
+<div class="content">
+  <div class="container-website">
+    <nav>
+      <div class="nav-bar">
+          <i class='bx bx-menu sidebarOpen'></i>
+          <span class="logo navLogo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+  
+          <div class="menu">
+              <div class="logo-toggle">
+                  <span class="logo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+                  <i class='bx bx-x sidebarCloser'></i>
+              </div>
+              <ul class="nav-links">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <!-- Plants Dropdown -->
+                  <li class="dropdown">
+                      <a href="#">Plants</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="indoor.html">Indoor Plants</a></li>
+                          <li><a href="outdoor.html">Outdoor Plants</a></li>
+                          <li><a href="flower.html">Flower Plants</a></li>
+                          <li><a href="climber.html">CLimbers Plants</a></li>
+                          <li><a href="ground.html">Ground Covers</a></li>
+                      </ul>
+                  </li>
+                  <!-- Pots Dropdown -->
+                  <li class="dropdown">
+                      <a href="#">Pots</a>
+                      <ul class="dropdown-menu">
+                          <li><a href="ceramic.html">Ceramic Pots</a></li>
+                          <li><a href="plastic.html">Plastic Pots</a></li>
+                          <li><a href="clay.html">Clay Pots</a></li>
+                          <li><a href="concrete.html">Concrete Pots</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="seeds.html">Seeds</a></li>
+                  <li><a href="tools.html">Tools</a></li>
+                  <li><a href="feedback.html">Feedback</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="donate.html"><i class='bx bxs-donate-blood icon' style="font-size: 23px;" ></i></a></li>
+                  <li><a href="addCart.html"><i class='bx bx-shopping-bag icon' style="font-size: 23px;"></i></a></li>
+                  <li><a href="login-signip.html"><i class='bx bxs-user-circle icon' style="font-size: 23px;" ></i></a></li>
+              </ul>
+          </div>
+  
+          <div class="darkLight-searchBox">
+              <div class="dark-light">
+                  <i class='bx bxs-moon moon '></i>
+                  <i class='bx bxs-sun sun'></i>
+              </div>
+              <div class="searchBox">
+                  <div class="searchToggle">
+                      <i class='bx bx-x cancel'></i>
+                      <i class='bx bx-search search'></i>
+                  </div>
+                  <div class="search-field">
+                      <input type="text" placeholder="search....">
+                      <i class='bx bx-search'></i>
+                  </div>            
+              </div>
+          </div>
+      </div>
+  </nav>
+<div class="body">
+<br><br><br><br><br>
+
+<select id="sortSelect">
+  <option value="original">Original Order</option>
+  <option value="price-asc">Price: Low to High</option>
+  <option value="price-desc">Price: High to Low</option>
+  <option value="alphabetical">Alphabetical</option>
+  <option value="popularity">Popularity</option>
+</select>
+
+
+
+  <div class="product-div" id="products"></div>
+  </div>
+  
+  </div>
+<!-- Footer start -->
+<footer>
+  <div class="footer-content">
+      <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>Plant Palace is your one-stop shop for all things green! From vibrant plants to stylish pots and essential gardening tools, we have everything you need to create your own indoor paradise.</p>
+      </div>
+      <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="seeds.html">Seeds</a></li>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donate.html">Donation</a></li>
+          </ul>
+      </div>
+      <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p><i class='bx bxs-phone'></i> +123-456-7890</p>
+          <p><i class='bx bxs-envelope'></i> info@plantpalace.com</p>
+          <p><i class='bx bxs-map'></i> 123 Street, ABC City, XYZ</p>
+          <div class="socials">
+              <a href="#"><i class='bx bxl-facebook'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-instagram'></i></a>
+              <a href="#"><i class='bx bxl-linkedin'></i></a>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Plant Palace | All Rights Reserved</p>
+  </div>
+</footer>
+<!-- footer end -->
+  </div>
+
+  <!-- loader div end -->
+</div>
+<!-- customization js link -->
+<script src="js/contact.js"></script>
+<script src="js/star.js"></script>
+<script src="js/script.js"></script>
+
+
+<!-- chatbot cdn link -->
+<script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+<script src="https://mediafiles.botpress.cloud/4575466c-91fe-413b-a908-42f659d5d234/webchat/v2.1/config.js"></script>
+
+  <script>
+    const products = [
+      { id: 8, name: "Hydrangea", price: 7000, image: "img/plant/outdoor/o1.jpg", popularity: 2 },
+      { id: 9, name: "Lavender", price: 5500, image: "img/plant/outdoor/o2.jpg", popularity: 3 },
+      { id: 10, name: "Begonia", price: 7500, image: "img/plant/outdoor/o3.jpg", popularity: 6 },
+      { id: 11, name: "Hibiscus", price: 4500, image: "img/plant/outdoor/o4.jpg", popularity: 4 },
+      { id: 12, name: "Caladium", price: 5800, image: "img/plant/outdoor/o5.jpg", popularity: 7 },
+      { id: 13, name: "Dianthus", price: 6500, image: "img/plant/outdoor/o6.jpg", popularity: 8 },
+    ];
+
+    // Store the original order of products
+    const originalProducts = [...products];
+
+function sortProducts(products, criterion) {
+  switch (criterion) {
+    case 'price-asc':
+      return [...products].sort((a, b) => a.price - b.price);
+    case 'price-desc':
+      return [...products].sort((a, b) => b.price - a.price);
+    case 'alphabetical':
+      return [...products].sort((a, b) => a.name.localeCompare(b.name));
+    case 'popularity':
+      return [...products].sort((a, b) => b.popularity - a.popularity);
+    case 'original':
+      return [...originalProducts];
+    default:
+      return products;
+  }
+}
+
+function displayProducts(products) {
+  const productsContainer = document.getElementById('products');
+  productsContainer.innerHTML = ''; // Clear existing products
+  products.forEach(product => {
+    const productCard = `
+      <div class="product">
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>Price: $${product.price}</p>
+<button onclick="location.href='product-detail.html?id=${product.id}'" class="btn-details">View Details</button>
+
+      </div>
+    `;
+    productsContainer.innerHTML += productCard;
+  });
+}
+
+document.getElementById('sortSelect').addEventListener('change', (e) => {
+  const sortedProducts = sortProducts(products, e.target.value);
+  displayProducts(sortedProducts);
+});
+
+displayProducts(products); // Initial display  </script>
+  <!-- customization js link -->
+<script src="js/script.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail</title>
+  <!-- css -->
+<link rel="stylesheet" href="css/style.css">   
+<!-- icon link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+  <!-- box icons link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    /* product */
+   body{
+    background-color: var(--body-color);
+    color: var(--second-text-color);
+   }
+    .product-container {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      margin-top: 90px;
+    }
+   
+    #product-img {
+      width: 40%;
+      height: 600px;
+      margin: 35px;
+      
+      filter: drop-shadow(5px 5px 20px var(--second-text-color));
+    }
+    #add-to-cart{
+      height: 50px;
+      width: 120px;
+      border-radius: 30px;
+      background-color: var(--btn-color);
+  color: var(--second-text-color);
+      font-size:1rem;
+      /* border: 2px solid var(--second-text-color); */
+      transition: all 0.3s ease-in-out 0s;
+
+    }
+    #add-to-cart:hover{
+      background-color: var(--second-text-color);
+  color:var(--btn-color);
+      font-size: 15px;
+      font-weight:bold;
+      border: 2px solid var(--second-text-color);
+    }
+  
+    #increment{
+      height: 30px;
+      width: 30px;
+      background-color: var(--btn-color);
+  color: var(--second-text-color);
+      transition: all 0.3s ease-in-out;
+      border-radius: 20px;
+      border: 1px var(--btn-color);
+    }
+    #increment:hover{
+      background-color: var(--second-text-color);
+  color:var(--btn-color);
+    }
+    #decrement{
+      height: 30px;
+      width: 30px;
+      transition: all 0.3s ease-in-out;
+      background-color: var(--btn-color);
+  color: var(--second-text-color);
+      border-radius: 20px;
+      border: 1px var(--btn-color);
+
+
+    }
+    #decrement:hover{
+      background-color: var(--second-text-color);
+  color:var(--btn-color);
+    }
+
+    #reset{
+      height: 35px;
+      width: 70px;
+      border-radius: 20px;
+      background-color: var(--btn-color);
+  color: var(--second-text-color);
+  border: 1px var(--btn-color);
+
+  transition: all 0.3s ease-in-out 0s;
+
+    }
+    #reset:hover{
+      background-color: var(--second-text-color);
+  color:var(--btn-color);
+      font-size: 15px;
+      font-weight:bold;
+      border:2px solid rgb(16, 39, 16);
+    }
+    @media (width < 768px){
+      #product-img{
+      width: 100%;
+     height: 400px;
+     margin: 0px;
+      margin-block: 50px;
+     
+      }
+      .product-container{
+        gap: 30px;
+        display: inline;
+      }
+      #cart-icon{
+  margin-top: 70px;
+  right: 0px;
+  position: absolute;
+  border-radius: 0px;
+  background-color: transparent;
+}
+#cart-count{
+  color: white;
+}
+    }
+
+
+.text-bold {
+            font-weight: 800;
+        }
+        .old-price-discount {
+            font-weight: 600;
+        }
+
+        .new-price {
+            font-size: 1.7rem;
+        }
+        #product-name{
+          font-size: 2.5rem;
+        }
+        #product-info{
+font-family:sans-serif;
+        }
+
+
+  </style>
+
+
+</head>
+<body>
+  <!-- start header -->
+  <nav>
+    <div class="nav-bar">
+        <i class='bx bx-menu sidebarOpen'></i>
+        <span class="logo navLogo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+
+        <div class="menu">
+            <div class="logo-toggle">
+                <span class="logo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+                <i class='bx bx-x sidebarCloser'></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- Plants Dropdown -->
+                <li class="dropdown">
+                    <a href="#">Plants</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="indoor.html">Indoor Plants</a></li>
+                        <li><a href="outdoor.html">Outdoor Plants</a></li>
+                        <li><a href="flower.html">Flower Plants</a></li>
+                        <li><a href="climber.html">CLimbers Plants</a></li>
+                        <li><a href="ground.html">Ground Covers</a></li>
+                    </ul>
+                </li>
+                <!-- Pots Dropdown -->
+                <li class="dropdown">
+                    <a href="#">Pots</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ceramic.html">Ceramic Pots</a></li>
+                        <li><a href="plastic.html">Plastic Pots</a></li>
+                        <li><a href="clay.html">Clay Pots</a></li>
+                        <li><a href="concrete.html">Concrete Pots</a></li>
+                    </ul>
+                </li>
+                <li><a href="seeds.html">Seeds</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="donate.html"><i class='bx bxs-donate-blood icon' style="font-size: 23px;" ></i></a></li>
+                <li><a href="cart.html" id="cart-icon"><i class='bx bx-shopping-bag icon' style="font-size: 23px;"></i>
+          <span id="cart-count">0</span>
+          </a></li>
+                <li><a href="login-signip.html"><i class='bx bxs-user-circle icon' style="font-size: 23px;" ></i></a></li>
+            </ul>
+        </div>
+
+        <div class="darkLight-searchBox">
+            <div class="dark-light">
+                <i class='bx bxs-moon moon '></i>
+                <i class='bx bxs-sun sun'></i>
+            </div>
+            <div class="searchBox">
+                <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                </div>
+                <div class="search-field">
+                    <input type="text" placeholder="search....">
+                    <i class='bx bx-search'></i>
+                </div>            
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- end header -->
+  <div class="product-container">
+    <!-- product img -->
+    <img id="product-img" src="" class="p-img" alt="">
+    <!-- product content -->
+    <div class="product-text">
+      <!-- product heading /name -->
+      <h1 id="product-name" class="text-bold"></h1>
+      <br>
+      <!-- pproduct price/del price -->
+      <div class="price  gap-2">
+      <p><del id="del-product-price" ></del><span class="old-price-discount text-danger">(10% off)</span></p>
+      <!-- product price -->
+       <p id="product-price" class="new-price text-bold mb-1"></p>
+       <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
+
+      </div>
+      <br>
+      <!-- product info -->
+      <p id="product-info"></p>
+      <br>
+      <!-- delivery -->
+      <div class="delivery my-4">
+        <p class="font-weight-bold mb-0"><span><i class="fa fa-truck" aria-hidden="true"></i></span> <b>Delivery done in 3 days from date of purchase</b> </p>
+        <p class="text-secondary">Order now to get this product delivery</p>
+    </div>
+    <!-- counter -->
+      <div class="container ">
+        <div class="counter d-flex gap-3 ">
+          <button id="decrement">-</button>
+          <div id="counter-value" >1</div>
+          <button id="increment">+</button>
+        </div>
+        
+        <button id="reset" class="my-3">Reset</button>
+      </div>
+      <!-- add to cart button -->
+      <button id="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+ 
+<!-- Related Products Section -->
+<div class="product-div" id="products"></div>
+
+
+
+  <div class="accordion accordion-flush p-4" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Can I return or exchange a plant?
+        </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">We accept returns and exchanges for plants under certain conditions. Please visit our Return Policy page for more details on how to process returns and exchanges.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Do you offer delivery services?        
+        </button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Yes, we offer delivery services to various locations. During checkout, you can select your preferred delivery option and provide your address details.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          What types of plants do you offer?
+        </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">We offer a wide variety of plants, including indoor plants, outdoor plants, flower plants, climbers, and ground covers. Browse our categories to find the perfect plant for your space.</div>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer start -->
+<footer>
+  <div class="footer-content">
+      <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>Plant Palace is your one-stop shop for all things green! From vibrant plants to stylish pots and essential gardening tools, we have everything you need to create your own indoor paradise.</p>
+      </div>
+      <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="seeds.html">Seeds</a></li>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donate.html">Donation</a></li>
+          </ul>
+      </div>
+      <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p><i class='bx bxs-phone'></i> +123-456-7890</p>
+          <p><i class='bx bxs-envelope'></i> info@plantpalace.com</p>
+          <p><i class='bx bxs-map'></i> 123 Street, ABC City, XYZ</p>
+          <div class="socials">
+              <a href="#"><i class='bx bxl-facebook'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-instagram'></i></a>
+              <a href="#"><i class='bx bxl-linkedin'></i></a>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Plant Palace | All Rights Reserved</p>
+  </div>
+</footer>
+<!-- footer end -->
+ <script>
+  let counter = 1;
+    const countervalue = document.getElementById('counter-value');
+    const decre = document.getElementById('decrement');
+    const incre = document.getElementById('increment');
+    const c_reset = document.querySelector('#reset');
+    // decrement
+    decre.addEventListener('click' , () => {
+     
+      if(counter > 1){
+        counter--;
+      countervalue.innerHTML = counter;
+      }
+    })
+    // increment
+    incre.addEventListener('click' , () => {
+      
+      if(counter < 5 ){
+        counter++
+      countervalue.innerHTML = counter;
+      }
+      else{
+        alert("we have limited stock")
+      }
+      
+      
+    })
+    c_reset.addEventListener ('click', reset);
+      function reset(){
+        counter=1;
+        countervalue.innerHTML=counter;
+      }
+ </script>
+  <script>
+    
+    const products = [
+//indoor plants
+{ id: 1, name: "Swiss Chese Plant", price: 6700, image: "img/plant/indoor/indoor9.webp", info:"  Scientific Name : Acinetobacter baumannii . Water Cycle: Water the plant thoroughly when the soil feels dry to the touch. Allow excess water to drain from the pot, and discard any water that collects in the saucer.Sun: Prefers bright, indirect light. Avoid direct sunlight, which can scorch the leaves.",popularity: 5 },
+      { id: 2, name: "Fiddle-Leaf Plant", price: 5000, image: "img/plant/indoor/indoor2.webp", info:" Scientific Name :Candida albicans. Water Cycle: Allow the soil to dry out slightly between waterings. Water the plant deeply when the soil feels dry down to your first knuckle.Sun: Requires bright, indirect light. Avoid direct sunlight, which can cause the leaves to scorch or turn yellow.",popularity: 3 },
+      { id: 3, name: "Rubber Plant", price: 6000, image: "img/plant/indoor/indoor8.webp", info:" Scientific Name : Mycobacterium tuberculosis. Water Cycle: Water the plant thoroughly when the soil feels dry to the touch. Allow excess water to drain from the pot, and discard any water that collects in the saucer.Sun: Prefers bright, indirect light. Can tolerate low light conditions, but may not grow as vigorously.",popularity: 8 },
+      { id: 4, name: "Snake Plant", price: 7200, image: "img/plant/indoor/indoor3.png", info:" Scientific Name :Acinetobacter baumannii. Water Cycle: Water the plant sparingly. Allow the soil to dry out completely between waterings. Avoid overwatering, which can lead to root rot.Sun: Prefers bright, indirect light. Can tolerate low light conditions, but may grow more slowly.",popularity: 6 },
+      { id: 5, name: "Peace Lily Plant", price: 4500, image: "img/plant/indoor/indoor6.png", info:" Scientific Name :Shigella sonnei. Water Cycle: Water the plant thoroughly when the soil feels dry to the touch. Allow excess water to drain from the pot, and discard any water that collects in the saucer.Sun: Prefers bright, indirect light. Avoid direct sunlight, which can scorch the leaves.",popularity: 4 },
+      { id: 6, name: "Spider Plant", price: 5500, image: "img/plant/indoor/indoor7.png", info:" Scientific Name :Neisseria gonorrhoeae. Water Cycle: Allow the soil to dry out slightly between waterings. Water the plant deeply when the soil feels dry down to your first knuckle.Sun: Requires bright, indirect light. Avoid direct sunlight, which can cause the leaves to scorch or turn yellow.",popularity: 7 },
+      { id: 7, name: "Aleovera Plant", price: 6000, image: "img/plant/indoor/indoor1.png", info:" Scientific Name :  Mycobacterium tuberculosis.Water Cycle: Water the plant thoroughly when the soil feels dry to the touch. Allow excess water to drain from the pot, and discard any water that collects in the saucer.Sun: Prefers bright, indirect light. Can tolerate low light conditions, but may not grow as vigorously.",popularity: 2 },
+
+
+      //outdoor
+      { id: 8, name: "Hydrangea", price: 7000, image: "img/plant/outdoor/o1.jpg", info:"Scientific Name:Hydrangea macrophylla .Water Cycle: Hydrangeas thrive with consistently moist soil. They require regular watering, especially during hot and dry periods. Ensure the soil is well-drained to avoid waterlogging, which can lead to root rot.Sunlight: They prefer partial to full shade, with morning sun being ideal. Too much direct sunlight can scorch the leaves and flowers.",popularity: 2 },
+      { id: 9, name: "Lavender", price: 5500, image: "img/plant/outdoor/o2.jpg", info:"Scientific Name:Lavandula angustifolia .Water Cycle: Lavender plants are drought-tolerant and prefer well-drained soil. Water sparingly, allowing the soil to dry out between watering sessions. Overwatering can cause root rot.Sunlight: Full sun is essential for lavender to thrive, needing at least 6-8 hours of sunlight per day.",popularity: 3 },
+      { id: 10, name: "Begonia", price: 7500, image: "img/plant/outdoor/o3.jpg", info:"Scientific Name: Begonia spp.Water Cycle: Begonias prefer moist soil but can tolerate occasional drought. They require regular watering, especially during the summer months. Water deeply and allow the top inch of soil to dry out before watering again.Sun: Begonias can tolerate a wide range of light conditions, from full sun to full shade. However, they prefer bright, indirect light. Protect them from direct sunlight during the hottest part of the day, as this can scorch their leaves.",popularity: 6 },
+      { id: 11, name: "Hibiscus", price: 4500, image: "img/plant/outdoor/o4.jpg", info:"Scientific Name:Hibiscus rosa-sinensis .Water Cycle: Hibiscus plants need consistent moisture and thrive with regular watering. They require more water during their blooming season and hot weather but ensure the soil is well-drained to avoid waterlogged roots.Sunlight: Full sun is best for hibiscus, needing at least 6 hours of direct sunlight daily to produce abundant blooms.",popularity: 4 },
+      { id: 12, name: "Caladium", price: 5800, image: "img/plant/outdoor/o5.jpg", info:"Scientific Name:Hydrangea macrophylla .Water Cycle: Hydrangeas thrive with consistently moist soil. They require regular watering, especially during hot and dry periods. Ensure the soil is well-drained to avoid waterlogging, which can lead to root rot.Sunlight: They prefer partial to full shade, with morning sun being ideal. Too much direct sunlight can scorch the leaves and flowers.",popularity: 7 },
+      { id: 13, name: "Dianthus", price: 6500, image: "img/plant/outdoor/o6.jpg", info:"Scientific Name:Hibiscus rosa-sinensis .Water Cycle: Lavender plants are drought-tolerant and prefer well-drained soil. Water sparingly, allowing the soil to dry out between watering sessions. Overwatering can cause root rot.Sunlight: Full sun is essential for lavender to thrive, needing at least 6-8 hours of sunlight per day.",popularity: 8 },
+
+      //flower
+      { id: 14, name: "Marigold ", price: 8000, image: "img/plant/flowerplants/f1.jpg",info:"Water: Marigolds prefer moderate watering. Allow the soil to dry out slightly between watering sessions. Overwatering can lead to root rot.Sunlight: Full sun is preferred, with at least 6-8 hours of sunlight daily.Soil: They do well in well-drained, moderately fertile soil. Sandy loam is ideal.Scientific Name: Tagetes spp.", popularity: 2 },
+      { id: 15, name: "Tulip", price: 6000, image: "img/plant/flowerplants/f2.jpg",info:"Water: Tulips need moderate watering, especially during their growing season. Ensure the soil is well-drained to prevent bulb rot.Sunlight: Full sun to partial shade. Tulips bloom best with at least 4-6 hours of sunlight per day.Soil: Well-drained, sandy soil is preferred, with a slightly acidic to neutral pH.Scientific Name: Tulipa spp.", popularity: 3 },
+      { id: 16, name: "Daffodil", price: 6500, image: "img/plant/flowerplants/f3.jpg",info:"Water: Daffodils require moderate watering during their growth period. Keep the soil moist but avoid waterlogging.Sunlight: Full sun to partial shade. Daffodils thrive in sunny locations with at least 6 hours of sunlight per day.Soil: Well-drained, sandy or loamy soil with a neutral to slightly acidic pH is ideal.Scientific Name: Narcissus spp.", popularity: 6 },
+      { id: 17, name: "Sunflower ", price: 9000, image: "img/plant/flowerplants/f4.jpg",info:"Water: Sunflowers require regular watering, especially during dry periods. Ensure the soil is consistently moist but not waterlogged.Sunlight: Full sun is essential, with at least 6-8 hours of direct sunlight per day.Soil: Sunflowers prefer well-drained, sandy loam soil with a neutral pH.Scientific Name: Helianthus annuu", popularity: 4 },
+      { id: 18, name: "Geranium ", price: 7500, image: "img/plant/flowerplants/f5.jpg",info:"Water: Geraniums prefer consistently moist soil but do not like to sit in water. Water them when the top inch of soil feels dry, ensuring good drainage to prevent root rot.Sunlight: They thrive in full sun to partial shade. Ideally, geraniums should receive at least 5 hours of direct sunlight daily.Soil: Well-drained, fertile soil rich in organic matter is best. A slightly acidic to neutral pH (6.0 to 7.0) supports healthy growth.Scientific Name: Pelargonium spp.", popularity: 7 },
+      { id: 19, name: "Lavender ", price: 8500, image: "img/plant/flowerplants/f6.jpg",info:" Water: Lavender is drought-tolerant and prefers infrequent, deep watering. Allow the soil to dry out between waterings to prevent root diseases.Sunlight: Full sun is essential for lavender. They require at least 6-8 hours of direct sunlight each day to thrive and maintain their fragrance.Soil: Well-drained, sandy or gravelly soil with a slightly alkaline pH (6.7 to 7.3) is ideal. Good drainage is crucial to prevent root rot.Scientific Name: Lavandula angustifolia", popularity: 8 },
+      { id: 20, name: "Coneflower", price: 8500, image: "img/plant/flowerplants/f7.jpg",info:"Water: Coneflowers prefer moderate watering. Keep the soil evenly moist, especially during dry spells, but ensure it dries out between waterings to prevent fungal issues.Sunlight: Full sun to partial shade. Coneflowers perform best with at least 6 hours of sunlight daily but can tolerate some afternoon shade in hotter climates.Soil: Adaptable to various soil types, including sandy or loamy soils. They prefer well-drained soil with a neutral to slightly acidic pH (6.0 to 7.0).Scientific Name: Echinacea purpurea", popularity: 8 },
+      { id: 21, name: " Black-eyed Susan", price: 8500, image: "img/plant/flowerplants/f8.jpg",info:" Lilacs require regular watering, especially during their first few years of growth and during dry periods. Keep the soil consistently moist but not waterlogged.Sunlight: Full sun is essential for lilacs. They need at least 6 hours of direct sunlight daily to produce abundant fragrant blooms.Soil: Well-drained, alkaline to neutral soil with a pH between 6.5 and 7.5 is preferred. Lilacs can tolerate a range of soil types but thrive best in fertile conditions.Scientific Name: Syringa vulgaris", popularity: 8 },
+      { id: 22, name: "Lilac ", price: 8500, image: "img/plant/flowerplants/f9.jpg",info:"Water: These hardy flowers prefer moderate watering. Allow the soil to dry out slightly between waterings, as overwatering can lead to root rot.Sunlight: Full sun is best for Black-eyed Susans. They require at least 6 hours of direct sunlight each day to produce vibrant blooms.Soil: They are adaptable to a variety of soil types, including sandy and loamy soils. Well-drained soil with a slightly acidic to neutral pH (6.0 to 7.0) is ideal.Scientific Name: Rudbeckia hirta", popularity: 8 },
+      { id: 23, name: "Poppy", price: 8500, image: "img/plant/flowerplants/f10.jpg",info:" Water: Lavender is drought-tolerant and prefers infrequent, deep watering. Allow the soil to dry out between waterings to prevent root diseases.Sunlight: Full sun is essential for lavender. They require at least 6-8 hours of direct sunlight each day to thrive and maintain their fragrance.Soil: Well-drained, sandy or gravelly soil with a slightly alkaline pH (6.7 to 7.3) is ideal. Good drainage is crucial to prevent root rot.Scientific Name: Lavandula angustifolia", popularity: 8 },
+
+      //climber
+      { id: 24, name: "Wisteria ", price: 4000, image: "img/plant/climber/c1.jpg",info:"Description: Wisteria is a vigorous, deciduous climber known for its cascading clusters of fragrant, lavender-blue flowers that bloom in late spring to early summer. Its lush foliage and striking blooms make it a popular choice for creating beautiful, romantic garden features.Water: Regular watering is needed, especially during dry spells. The soil should be kept consistently moist but not waterlogged.Sun: Prefers full sun to partial shade. It thrives best in a sunny location where it can get at least 6 hours of direct sunlight daily . Scientific Name: Wisteria sinensis", popularity: 2 },
+      { id: 25, name: "Clematis ", price: 5000, image: "img/plant/climber/c2.jpg",info:"Description: Clematis is a diverse genus of climbing plants valued for their stunning, large flowers in a wide range of colors, including white, pink, purple, and red. They can provide continuous blooms throughout the growing season depending on the variety.Water: Needs regular watering to keep the soil moist. It’s important to avoid letting the roots dry out completely.Sun: Prefers partial to full sun. Most varieties enjoy morning sun and afternoon shade . Scientific Name: Clematis spp.", popularity: 3 },
+      { id: 26, name: "Jasmine ", price: 4500, image: "img/plant/climber/c3.jpg",info:"Description: Jasmine is a highly fragrant climbing plant that produces small, white or yellow flowers. It's often used to cover trellises and arbors due to its vigorous growth and aromatic blooms.Water: Requires moderate watering. Allow the top inch of soil to dry out between waterings. It is tolerant of short periods of drought.Sun: Thrives in full sun to partial shade. It needs at least 4-6 hours of direct sunlight for optimal growth and flowering . Scientific Name: Jasminum spp.", popularity: 6 },
+      { id: 27, name: "English Ivy", price: 6000, image: "img/plant/climber/c4.jpg",info:"Description: English Ivy is a hardy evergreen climber known for its glossy, dark green leaves. It’s often used for covering walls and fences, and its ability to thrive in various conditions makes it a versatile choice for many gardeners.Water: Prefers consistent moisture. Water regularly, but it can tolerate occasional drought. Ensure good drainage to prevent root rot.Sun: Can grow in full sun to full shade. It’s particularly useful in shady areas where other plants might struggle . Scientific Name: Hedera helix", popularity: 4 },
+      { id: 28, name: " Bougainvillea", price: 5600, image: "img/plant/climber/c5.jpg",info:"Description: Bougainvillea is a vibrant, flowering climber that produces colorful bracts surrounding its small white flowers. It’s known for its spectacular display of pink, purple, red, or orange blooms and is often used to add a burst of color to gardens and patios.Water: Prefers a well-drained soil with regular watering. It’s somewhat drought-tolerant once established.Sun: Needs full sun to thrive. It requires at least 6 hours of direct sunlight per day to produce the best blooms . Scientific Name: Bougainvillea spp.", popularity: 7 },
+      { id: 29, name: "Honeysuckle", price: 4700, image: "img/plant/climber/c6.jpg",info:"Description: Honeysuckle is a fast-growing, deciduous or evergreen climber with sweetly scented, tubular flowers that attract pollinators like bees and hummingbirds. It has a pleasant aroma and often produces bright red or orange berries in the fall.Water: Requires regular watering, especially during dry periods. Keep the soil evenly moist but not waterlogged.Sun: Prefers full sun to partial shade. It will bloom more profusely in a sunny location . Scientific Name: Lonicera spp", popularity: 8 },
+//groundcovers
+{ id: 30, name: "Creeping Jenny ", price: 3500, image: "img/plant/groundcover/g1.jpg", info:"Description: Creeping Jenny is a low-growing ground cover with vibrant green foliage that turns golden yellow in the fall. It spreads quickly and forms a dense mat, making it an excellent choice for covering large areas and controlling erosion.Water: Prefers regular watering to keep the soil consistently moist. It can tolerate some drought once established but thrives with consistent moisture.Sun: Grows well in full sun to partial shade. It performs best with some sunlight but can handle shaded areas.Scientific Name: Lysimachia nummularia",popularity: 2 },
+      { id: 31, name: "Creeping Thyme", price: 2900, image: "img/plant/groundcover/g2.jpg", info:"Description: Creeping Thyme is a fragrant, low-growing ground cover that produces small, tubular flowers in shades of pink, purple, or white. It's a hardy plant that forms a dense, carpet-like mat and is often used between stepping stones or in garden borders.Water: Requires moderate watering. It’s drought-tolerant once established and prefers well-drained soil.Sun: Thrives in full sun. It needs at least 6 hours of direct sunlight each day for optimal growth and flowering.Scientific Name: Thymus serpyllum",popularity: 3 },
+      { id: 32, name: "Sedum ", price: 3000, image: "img/plant/groundcover/g3.jpg", info:"Description: Sedum, or Stonecrop, is a hardy, low-growing ground cover with succulent, fleshy leaves that come in various colors, including green, red, and purple. It produces clusters of star-shaped flowers in late summer to fall.Water: Prefers well-drained soil and requires minimal watering. It’s very drought-tolerant and should not be overwatered.Sun: Grows best in full sun. It thrives in bright, sunny locations and can tolerate some light shade.Scientific Name: Sedum spp.",popularity: 6 },
+
+      //pots
+      //ceramic pots
+      { id: 33, name: "Classic Terracotta Pot", price: 12000, image: "img/pots/ceramicpot/c1.jpg",info:"Description: Terracotta pots are made from clay and have a rustic, earthy appearance. They are porous, which allows for air exchange and helps with drainage. The natural color of terracotta gives a warm, classic look to any garden or indoor space.Care: Terracotta pots need to be watered regularly as they dry out quickly due to their porous nature. They should be placed in a location where they are not exposed to extreme temperatures, as they can crack in freezing conditions. It’s also a good idea to use a saucer to catch excess water.Features: Traditional design, excellent drainage, breathable material.", popularity: 2 },
+      { id: 34, name: "Modern Geometric Ceramic Pot", price: 800, image: "img/pots/ceramicpot/c2.jpg",info:"Description: Glazed ceramic pots are coated with a glossy or matte finish, which provides a smooth, colorful surface. The glaze makes them non-porous, which helps retain moisture and protects the pot from weathering.Care: These pots require less frequent watering compared to unglazed pots due to their moisture-retaining properties. They are more durable and resistant to temperature fluctuations. However, ensure they have drainage holes to prevent waterlogging, which can lead to root rot.Features: Decorative finish, moisture-retentive, available in various colors and designs.", popularity: 3 },
+      { id: 35, name: "Glazed Ceramic Pot ", price: 1000, image: "img/pots/ceramicpot/c3.jpg",info:"Description: Modern geometric ceramic pots feature contemporary shapes and clean lines, often in a variety of bold or muted colors. They are designed to make a statement and add a touch of modern elegance to your space.Care: These pots usually have a glazed finish, making them easier to clean and maintain. Like other ceramic pots, they should have proper drainage to avoid water accumulation at the bottom. They can be used both indoors and outdoors, but it's best to protect them from extreme weather.Features: Stylish design, easy maintenance, contemporary aesthetics.", popularity: 6 },
+      { id: 36, name: "Textured Ceramic Pot", price: 700, image: "img/pots/ceramicpot/c4.jpg",info:"Description: Textured ceramic pots have a unique surface finish that may include patterns, ridges, or embossed designs. These textures add visual interest and can complement a variety of plant styles and indoor décor.Care: Like glazed ceramic pots, textured pots are typically non-porous and retain moisture well. Regular watering is still necessary, but drainage holes are crucial to prevent waterlogging. The textured surface can be a bit harder to clean, so occasional gentle scrubbing may be required.Features: Unique surface patterns, decorative and functional, available in various textures and finishes.", popularity: 4 },
+      { id: 37, name: " Hanging Ceramic Planter", price: 1300, image: "img/pots/ceramicpot/c5.jpg",info:"Description: Hanging ceramic planters are designed with built-in hooks or cords for suspension. They are ideal for creating vertical gardens or adding greenery to areas with limited floor space. They often come in a variety of shapes, including bowls, spheres, and cylinders.Care: Ensure that the hanging planter has proper drainage to avoid water accumulation. Regular watering is needed, but be cautious of overwatering, as hanging planters can sometimes be more prone to waterlogging. Protect from extreme temperatures to prevent cracking.Features: Space-saving design, ideal for indoor and outdoor use, adds visual interest to vertical spaces.", popularity: 7 },
+      { id: 38, name: "Self-Watering Ceramic Pot", price: 1000, image: "img/pots/ceramicpot/c6.jpg",info:"Description: Self-watering ceramic pots come with an integrated reservoir system that allows for consistent moisture supply to the plant. They often feature a separate compartment for water that feeds into the soil as needed.Care: While these pots reduce the frequency of watering, it’s still important to monitor the water level in the reservoir and refill as necessary. Ensure that the pot has good drainage to prevent any overflow or potential root rot.Features: Low-maintenance, consistent moisture supply, convenient for busy gardeners or indoor plants.", popularity: 8 },
+      { id: 38, name: "Vintage Ceramic Pot", price: 500, image: "img/pots/ceramicpot/c7.jpg",info:"Description: Vintage ceramic pots have an antique or aged appearance, often featuring crackle glaze, distressed finishes, or classic patterns. They are designed to evoke a sense of nostalgia and can add charm to any setting.Care: Vintage pots might be more delicate due to their decorative finishes. Handle with care to avoid chipping or cracking. They generally require regular watering, but proper drainage is essential to prevent damage to the decorative elements.Features: Classic, charming appearance, adds historical and artistic value, suitable for decorative purposes.", popularity: 8 },
+
+
+      //plastic
+
+      { id: 39, name: "Standard Plastic Nursery Pot", price: 1000, image: "img/pots/plasticpot/p1.jpg",info:"Description: Standard plastic nursery pots are commonly used for growing plants in nurseries and garden centers. They are lightweight, durable, and come in various sizes. These pots typically have a simple, functional design and are often used for transplanting seedlings or young plants.Care: They are easy to clean and maintain. Ensure they have adequate drainage holes to prevent waterlogging. These pots can be used both indoors and outdoors, but it's best to protect them from extreme temperatures to prolong their lifespan.Features: Lightweight, durable, cost-effective, available in various sizes.", popularity: 2 },
+      { id: 40, name: "Self-Watering Plastic Pot", price: 700, image: "img/pots/plasticpot/p2.jpg",info:"Description: Self-watering plastic pots have an integrated water reservoir system that provides consistent moisture to the plant. This feature is particularly useful for busy gardeners or for plants that require steady watering.Care: Monitor the water level in the reservoir and refill as needed. These pots reduce the need for frequent watering but ensure that the drainage holes are clear to avoid overflow and root rot.Features: Reduces watering frequency, convenient for busy schedules, suitable for indoor and outdoor use.", popularity: 3 },
+      { id: 41, name: "Hanging Plastic Planter ", price: 800, image: "img/pots/plasticpot/p3.jpg",info:"Description: Hanging plastic planters are designed for vertical gardening and space-saving. They come with built-in hooks or chains for easy suspension and are available in various shapes such as baskets, bowls, and cylinders.Care: Ensure proper drainage to prevent water accumulation. Hanging planters are easy to clean and lightweight, making them ideal for indoor and outdoor hanging arrangements.Features: Space-saving design, ideal for creating vertical gardens, lightweight and easy to handle.", popularity: 6 },
+      { id: 42, name: "Decorative Plastic Pot", price: 650, image: "img/pots/plasticpot/p4.jpg",info:"Description: Decorative plastic pots come in a range of styles, colors, and patterns, designed to add aesthetic appeal to indoor or outdoor spaces. They often mimic the look of more expensive materials like ceramic or stone but are made from lightweight plastic.Care: These pots are easy to clean and maintain. They usually come with drainage holes but check to ensure they are not obstructed. Protect from extreme temperatures to avoid warping or fading.Features: Stylish and visually appealing, lightweight, available in various designs and finishes", popularity: 4 },
+      { id: 43, name: " Square Plastic Pot", price: 1100, image: "img/pots/plasticpot/p5.jpg",info:"Description: Square plastic pots feature a geometric design and are often used for both indoor and outdoor plants. Their shape allows for efficient use of space and is ideal for fitting into tight corners or aligning neatly in rows.Care: Ensure they have proper drainage holes to avoid water accumulation. They are easy to clean and can be moved around easily due to their lightweight nature. Ideal for urban gardens and small spaces.Features: Space-efficient design, versatile for various planting arrangements, easy to handle and move.", popularity: 7 },
+      { id: 44, name: "Fabric-Lined Plastic Pot", price: 500, image: "img/pots/plasticpot/p6.jpg",info:"Description: Fabric-lined plastic pots combine the durability of plastic with the benefits of fabric liners. The fabric provides additional aeration and helps with moisture retention while the plastic exterior offers structural support and durability.Care: The fabric liner improves drainage and helps prevent overwatering. These pots are generally easy to clean, and the fabric can be washed if needed. Ensure that the plastic part is not exposed to harsh conditions to maintain its durability.Features: Enhanced aeration, moisture retention, combines the benefits of plastic and fabric.", popularity: 8 },
+      { id: 45, name: "Collapsible Plastic Pot", price: 1200, image: "img/pots/plasticpot/p7.jpg",info:"Description: Collapsible plastic pots are designed to be foldable for easy storage and transportation. They are often used by gardeners who need a portable and space-saving option, such as for temporary plantings or for travel.Care: When using, ensure the pot is fully expanded and has proper drainage. After use, collapse the pot for convenient storage. These pots are durable but should be handled with care to avoid damage to the collapsible mechanism.Features: Space-saving and portable, ideal for temporary use, easy to store and transport.", popularity: 8 },
+
+      //clay pots
+      { id: 46, name: "Traditional Clay Pot", price: 1100, image: "img/pots/claypot/c1.jpg", info:"Description: Traditional clay pots are made from natural clay and have a rustic appearance. They are typically unglazed and porous, allowing for excellent airflow to plant roots and providing a classic look for any garden or indoor space.Care: Regular watering is required as the porous nature of the pot allows moisture to evaporate quickly. Ensure the pot is placed in a protected area during freezing temperatures to prevent cracking.Features: Classic design, excellent airflow and drainage, natural and eco-friendly.",popularity: 2 },
+      { id: 47, name: " Glazed Clay Pot", price: 850, image: "img/pots/claypot/c2.jpg", info:"Description: Glazed clay pots have a shiny, colored coating applied to the surface. This glaze makes the pot non-porous, which helps retain moisture and prevents the clay from absorbing water. The glaze also adds an aesthetic touch, available in various colors and finishes.Care: Less frequent watering is needed compared to unglazed pots due to the moisture-retentive properties. Ensure the pot has drainage holes to prevent waterlogging and check for any signs of glaze damage.Features: Moisture-retentive, decorative finishes, less prone to cracking compared to unglazed pots.",popularity: 3 },
+      { id: 48, name: "Terracotta Pot with Saucer", price: 580, image: "img/pots/claypot/c3.jpg", info:"Description: Terracotta pots with saucers come with a matching saucer to catch excess water and protect surfaces from stains. The saucer is especially useful for indoor plants and helps manage watering more effectively.Care: Regular watering is still needed, and the saucer helps to prevent water damage to surfaces. Make sure the saucer is properly aligned with the pot to catch excess water and clean it periodically to avoid algae growth.Features: Includes a matching saucer, protects surfaces, helps with moisture management.",popularity: 6 },
+      { id: 49, name: "Hanging Clay Pot ", price: 620, image: "img/pots/claypot/c4.jpg", info:"Description: Hanging clay pots are designed for suspension, featuring built-in hooks or chains. They are ideal for adding greenery to vertical spaces and can be used both indoors and outdoors.Care: Ensure proper drainage to prevent water accumulation. Hanging pots should be checked regularly for signs of wear on the suspension mechanisms and adjusted as needed. Avoid overwatering to prevent excess weight and potential falling.Features: Space-saving design, suitable for vertical gardens, adds aesthetic appeal to hanging arrangements.",popularity: 4 },
+      { id: 50, name: "  Decorative Clay Planter", price: 950, image: "img/pots/claypot/c5.jpg", info:"Description: Decorative clay planters feature intricate designs, patterns, or textures that add visual interest to garden or indoor settings. They often have artistic or cultural motifs and can serve as a focal point in your plant arrangement.Care: Regular watering is required, and decorative elements should be checked for any damage. Ensure the pot has proper drainage to maintain plant health and avoid water-related issues.Features: Artistic and unique designs, enhances decor, can be a centerpiece in plant displays.",popularity: 7 },
+      { id: 51, name: "Large Clay Pot", price: 1000, image: "img/pots/claypot/c6.jpg", info:"Description: Large clay pots are designed for bigger plants or small trees and are ideal for creating substantial garden displays. They offer ample space for root growth and can be used as statement pieces in garden landscapes or large indoor areas.Care: Large pots require regular watering and proper drainage. Due to their size, they may be heavy and challenging to move, so position them carefully. Protect from extreme weather conditions to prevent cracking.Features: Ideal for large plants, provides ample root space, suitable for creating impactful garden displays.",popularity: 8 },
+
+
+      //concrete pots
+
+      { id: 52, name: "Classic Concrete Pot", price: 1000, image: "img/pots/claypot/c1.jpg", info:"Description: Classic concrete pots are made from a solid mixture of cement and aggregates, providing a durable and heavy-duty option for planting. They have a natural gray finish and a simple, functional design that suits many garden styles.Care: Requires minimal maintenance. Ensure the pot has drainage holes to prevent water accumulation. Protect from extreme weather conditions to prevent cracking and consider sealing the pot to extend its lifespan.Features: Durable and heavy, minimalistic design, long-lasting.",popularity: 2 },
+      { id: 53, name: "  Textured Concrete Planter", price: 700, image: "img/pots/claypot/c2.jpg", info:"Description: Textured concrete planters feature various surface patterns, such as geometric designs or rustic textures. These textures add visual interest and can complement a variety of garden or interior styles.Care: Regular cleaning to maintain the appearance of the texture. Ensure proper drainage and protect from harsh weather conditions. Sealing the planter can help preserve the texture and prevent moisture-related damage.Features: Decorative surface patterns, adds visual appeal, durable.",popularity: 3 },
+      { id: 54, name: "Concrete Trough Planter", price: 680, image: "img/pots/claypot/c3.jpg", info:"Description: Concrete trough planters are long, rectangular containers that are ideal for creating garden beds or planting multiple plants in a single pot. They are commonly used for herbs, succulents, or ornamental grasses.Care: Ensure the trough has adequate drainage holes. Regularly check for water accumulation and clean the trough to prevent algae buildup. Protect from extreme temperatures to avoid cracking.Features: Long and narrow design, versatile for planting, sturdy construction.",popularity: 6 },
+      { id: 55, name: "Hanging Concrete Planter ", price: 750, image: "img/pots/claypot/c4.jpg", info:"Description: Hanging concrete planters are designed with built-in hooks or cords for suspension. They offer a modern, industrial look and are suitable for adding greenery to vertical spaces or creating unique indoor displays.Care: Ensure the hanging mechanism is secure and check regularly for signs of wear. Proper drainage is essential to prevent waterlogging. Avoid overwatering to reduce weight and potential strain on the hanging system.Features: Space-saving design, modern aesthetic, suitable for vertical gardening.",popularity: 4 },
+      { id: 56, name: " Concrete Bowl Planter   ", price: 800, image: "img/pots/claypot/c5.jpg", info:"Description: Concrete bowl planters have a rounded, bowl-like shape and are often used for low-growing plants, succulents, or as decorative elements. Their wide surface area allows for creative planting arrangements.Care: Ensure the bowl has drainage holes to prevent water accumulation. Clean the bowl regularly and protect it from extreme weather conditions. Sealing the bowl can help maintain its appearance and prevent damage.Features: Decorative rounded shape, versatile for various plants, wide surface area.",popularity: 7 },
+      { id: 57, name: " Concrete Cylinder Planter", price: 950, image: "img/pots/claypot/c6.jpg", info:"Description: Concrete cylinder planters have a sleek, cylindrical shape and are often used for modern, minimalist garden designs. They provide a contemporary look and are suitable for medium to large plants.Care: Ensure proper drainage to avoid waterlogging. Regularly check for any cracks or damage, and protect from severe weather conditions. Sealing the concrete can help enhance durability and appearance.Features: Sleek and modern design, durable, suitable for various plant sizes.",popularity: 8 },
+
+      //seeds
+      { id: 58, name: "Tomato Seeds", price: 450, image: "img/seeds/s1.webp", info:"Scientific Name: Solanum lycopersicumDescription: Tomato seeds produce plants that yield juicy, red fruit, ideal for salads, sauces, and cooking. They come in various varieties, including cherry, beefsteak, and Roma.Care: Start seeds indoors 6-8 weeks before the last frost date. Keep them in a warm, sunny spot or under grow lights. Transplant seedlings outdoors after the danger of frost has passed. Water regularly and provide support as the plants grow.Features: Versatile use, wide variety of types and flavors, high yield.",popularity: 2 },
+      { id: 59, name: "Basil Seeds", price: 340, image: "img/seeds/s2.webp", info:"Scientific Name: Ocimum basilicumDescription: Basil seeds produce aromatic herbs used in cooking, particularly in Italian and Mediterranean cuisine. Varieties include sweet basil, Thai basil, and purple basil.Care: Sow seeds indoors 6-8 weeks before the last frost date or directly in the garden after the threat of frost has passed. Basil prefers full sun and well-drained soil. Water regularly and harvest leaves frequently to encourage growth.Features: Aromatic and flavorful, versatile culinary use, easy to grow.",popularity: 3 },
+      { id: 60, name: "Sunflower Seeds", price: 540, image: "img/seeds/s3.webp", info:"Scientific Name: Helianthus annuusDescription: Sunflower seeds grow into tall, vibrant flowers with large yellow blooms and edible seeds. They are often used for ornamental purposes, as well as for attracting pollinators and producing sunflower oil.Care: Sow seeds directly into the garden after the last frost date. Sunflowers need full sun and well-drained soil. Water regularly, especially during dry periods. Provide support for taller varieties to prevent them from toppling.Features: Bright and cheerful blooms, attracts pollinators, edible seeds.",popularity: 6 },
+      { id: 61, name: "Carrot Seeds ", price: 650, image: "img/seeds/s4.webp", info:"Scientific Name: Daucus carotaDescription: Carrot seeds produce root vegetables that are rich in vitamins and minerals. Varieties include orange carrots, purple carrots, and baby carrots.Care: Sow seeds directly into well-prepared, loose soil in early spring or late summer. Carrots need a sunny location and consistent moisture. Thin seedlings as they grow to allow enough space for root development.Features: Nutritious root vegetables, various colors and sizes, easy to grow in the right soil conditions.",popularity: 4 },
+      { id: 62, name: "  Lettuce Seeds  ", price: 280, image: "img/seeds/s5.webp", info:"Scientific Name: Lactuca sativaDescription: Lettuce seeds produce leafy greens used in salads and sandwiches. Varieties include Romaine, Butterhead, and Leaf lettuce.Care: Sow seeds directly into the garden or start indoors. Lettuce prefers cool weather and partial shade. Keep soil consistently moist and harvest leaves as needed for a continuous supply.Features: Fast-growing, suitable for multiple harvests, various textures and flavors.",popularity: 7 },
+      { id:63, name: " Cucumber Seeds", price: 560, image: "img/seeds/s6.webp", info:"Scientific Name: Cucumis sativusDescription: Cucumber seeds grow into plants that produce crisp, refreshing cucumbers used in salads, pickles, and sandwiches. Varieties include slicing cucumbers, pickling cucumbers, and seedless cucumbers.Care: Sow seeds directly in the garden after the last frost date or start indoors 4-6 weeks before the last frost. Cucumbers need full sun and well-drained soil. Provide support for climbing varieties and water regularly.Features: Refreshing fruit, versatile culinary uses, various types for different needs.",popularity: 8 },
+      { id:64, name: " Pea Seeds ", price: 750, image: "img/seeds/s7.webp", info:"Scientific Name: Pisum sativum,Description: Pea seeds produce plants that yield sweet, edible pods and peas used in various dishes. They include varieties like snap peas, snow peas, and garden peas, known for their crisp texture and fresh flavor.Care: Sow seeds directly into the garden as soon as the soil can be worked in early spring. Peas prefer cool weather and full sun. Provide support for climbing varieties and keep soil consistently moist. Peas benefit from regular harvesting to encourage continued production.Features: Nutrient-rich, versatile culinary use, grows well in cool weather, suitable for both fresh eating and cooking.",popularity: 8 },
+
+//tools
+      { id: 65, name: "Trowel ", price: 850, image: "img/tools/t1.jpg", info:"Description: A trowel is a small hand tool with a pointed, scoop-shaped metal blade and a handle, used for digging, planting, and transferring soil. It is essential for small-scale gardening tasks such as planting seedlings or bulbs.Care: Clean the blade after each use to remove soil and debris. Store in a dry place to prevent rusting. Sharpen the edge regularly to maintain efficiency, and ensure the handle is securely attached to the blade.Features: Versatile for planting and digging, compact and easy to use, essential for detailed gardening tasks.",popularity: 4 },
+      { id: 66, name: "   Pruning Shears  ", price: 980, image: "img/tools/t2.jpg", info:"",popularity: 7 },
+      { id:67, name: " Pruning Shears", price: 800, image: "img/tools/t3.jpg", info:"",popularity: 8 },
+      { id:68, name: "Garden Hoe", price: 750, image: "img/tools/t4.jpg", info:"",popularity: 8 },
+
+    ];
+   
+
+   
+
+
+
+
+
+
+    
+  </script>
+    <!-- customization js link -->
+<script src="js/script.js"></script>
+<script src="js/productdetail.js"></script>
+
+  <!-- bootsrtap js -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+ 
+
