@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --body-color: #ffffff;
+    --nav-color: #235347;
+    --side-nav: #235347;
+    --text-color: #d1f3d7;
+    --text-color1: #000601;
+    --search-bar: #d1f3d7;
+    --search-text: #0000;
+}
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #235347;
+    --side-nav: #235347;
+    --text-color: #d1f3d7;
+    --text-color1: #d1f3d7;
+    --search-bar: #d1f3d7;
+    --search-text: #0000;
+}
+
+/* =============================== header section =========================================== */
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);   
+    z-index: 100; 
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+nav .nav-bar .logo img{
+    width: 60px;
+    height: 60px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+.menu .logo-toggle{
+    display: none;
+}
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+.nav-bar .nav-links li{
+    list-style: none;
+    margin: 0 5px;
+}
+.nav-links li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    width: 180px;
+    top: 100%;
+    left: 0;
+    background-color: var(--nav-color);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-links .dropdown .dropdown-menu li {
+    margin: 0;
+}
+
+.nav-links .dropdown .dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-links .dropdown .dropdown-menu a:hover {
+    background-color: var(--search-bar);
+    color: var(--nav-color);
+    border-radius: 5px;
+}
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+}
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+.searchBox{
+    position: relative;
+}
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--nav-color);
+    background-color: var(--search-bar);
+}
+body.dark .search-field input{
+    color: var(--text-color);
+}
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
+}
+/* =============================== header section ends ====================================== */
+
+/* ============================== responsive header work =================================== */
+@media (max-width: 790px){
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all .4s ease;
+    }
+    nav.active .menu{
+        left: -0%;
+    }
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all .3s ease;
+    }
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu .logo-toggle .sidebarCloser{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .nav-bar .nav-links{
+        flex-direction: column;
+        /* padding-top: px; */
+    }
+    .nav-links li a{
+        display: block;
+        /* margin-top: 1px; */
+    }
+}
+@media (max-width: 790px) {
+    .nav-links .dropdown .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: var(--side-nav);
+    }
+
+    .nav-links .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+/* active nav link */
+.nav-links li a.active {
+    background-color: #d1f3d7;
+    border-radius: 7px;
+    color: black;
+  }
+  .nav-links li a:hover{
+    background-color: #d1f3d7;
+    border-radius: 7px;
+    color: black;
+  }
+/* ======================= responsive header work ends =============================== */
+
+
+/* ================================ footer section ==================================== */
+footer {
+    background-color: var(--nav-color);
+    color: var(--text-color);
+    padding: 40px 0;
+    text-align: left;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+.footer-section {
+    flex: 1;
+    margin-right: 20px;
+}
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+.footer-section ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+.footer-section ul li a:hover {
+    color: var(--search-bar);
+}
+.footer-section .socials a {
+    margin-right: 15px;
+    color: var(--text-color);
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+.footer-section .socials a:hover {
+    color: var(--search-bar);
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid var(--text-color);
+    padding-top: 20px;
+}
+.footer-bottom p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+.container h1, h5, p{
+    color: var(--text-color1);
+
+}
+
+/* ================================= Responsive Footer Work ================================ */
+@media (max-width: 790px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 30px;
+    }
+}
+/* ============================== Responsive Footer work ends =========================== */

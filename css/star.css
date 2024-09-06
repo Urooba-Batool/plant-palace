@@ -1,0 +1,34 @@
+p {
+    text-align: justify;
+  }
+
+  .feed {
+    text-align: center;
+    
+  }
+
+  .star {
+    font-size: 7vh;
+    cursor: pointer;
+    color: rgb(119, 248, 169);
+  }
+
+  .one {
+    color: rgb(255, 0, 0);
+  }
+
+  .two {
+    color: rgb(255, 106, 0);
+  }
+
+  .three {
+    color: rgb(251, 255, 120);
+  }
+
+  .four {
+    color: rgb(255, 255, 0);
+  }
+
+  .five {
+    color: orange;
+  }
