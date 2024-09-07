@@ -97,7 +97,7 @@
             </div>
             <div class="user-input-field">
                 <i class='bx bxs-lock-alt'></i>
-                <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$" />
+                <input type="password" name="pass" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$" />
             </div>
             <input type="submit" value="Login" class="login-signup-btn solid" />
             <p class="user-social-text">Or Sign in with social platforms</p>
@@ -128,7 +128,7 @@
             </div>
             <div class="user-input-field">
                 <i class='bx bxs-lock-alt'></i>
-                <input type="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$" />
+                <input type="password" name="pass placeholder="Password" pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$" />
             </div>
             <input type="submit" class="login-signup-btn" value="Sign up" />
             <p class="user-social-text">Or Sign up with social platforms</p>
@@ -234,5 +234,13 @@
     
     <!-- customization js link -->
     <script src="js/script.js"></script>
+    <script>
+      let password = document.forms["pass"].value
+        let character = /(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{6,}/;
+        if (!character.test(password)) {
+            seterror("pass", " * password should contain at least one upper case, one lower case and one special character and minimum length of 6 characters");
+            returnval = false;
+        }
+          </script>
 </body>
 </html>
