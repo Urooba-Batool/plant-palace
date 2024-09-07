@@ -238,16 +238,16 @@
     <script src="js/script.js"></script>
     <script>
       const passwordInput = document.getElementById('pass');
-      const errorSpan = document.getElementById('error');
+      const errordiv = document.getElementById('error');
 
       passwordInput.addEventListener('input', () => {
         const password = passwordInput.value;
         const character = /(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{6,}/;
 
         if (!character.test(password)) {
-          errorSpan.textContent = " * password should contain at least one upper case, one lower case and one special character and minimum length of 6 characters";
+          errordiv.textContent = " * password should contain at least one upper case, one lower case and one special character and minimum length of 6 characters";
         } else {
-          errorSpan.textContent = "";
+          errordiv.textContent = "";
         }
       });
     </script>
