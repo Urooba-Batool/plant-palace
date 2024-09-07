@@ -93,7 +93,7 @@
             <h2 class="user-title">Log in</h2>
             <div class="user-input-field">
                 <i class='bx bxl-gmail'></i>
-                <input type="text" placeholder="Email" pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$" />
+                <input type="email" placeholder="Email" pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$" />
             </div>
             <div class="user-input-field">
                 <i class='bx bxs-lock-alt'></i>
@@ -238,16 +238,17 @@
     <script src="js/script.js"></script>
     <script>
       const passwordInput = document.getElementById('pass');
-      const errordiv = document.getElementById('error');
+      const errorDiv = document.getElementById('error');
 
       passwordInput.addEventListener('input', () => {
         const password = passwordInput.value;
         const character = /(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{6,}/;
 
         if (!character.test(password)) {
-          errordiv.textContent = " * password should contain at least one upper case, one lower case and one special character and minimum length of 6 characters";
+          errorDiv.style.color = "red";
+          errorDiv.textContent = " * password should contain at least one upper case, one lower case and one special character and minimum length of 6 characters";
         } else {
-          errordiv.textContent = "";
+          errorDiv.textContent = "";
         }
       });
     </script>
