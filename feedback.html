@@ -2,22 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <metaname="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    
-    <link rel="icon" type="image/png" href="css/title logo.png"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
 
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
+    <link rel="icon" type="image/png" href="img/title logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- customization css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aboutus.css">
     <!-- customization css link -->
     <link rel="stylesheet" href="css/feedback.css" />
     <link rel="stylesheet" href="css/star.css">
     <link rel="stylesheet" href="css/style1.css">
-    <title>FeedBack</title>
+    <style>
+      #feedback-card {
+        display: none; /* hide the feedback card by default */
+        width: 300px; /* set width of feedback card */
+        height: 500px; /* set height of feedback card */
+        /* add any other styles you want to apply to the feedback card */
+      }
+      #feedback-cards-container .card {
+        transition: transform 0.3s;
+        background-color: aquamarine;
+      }
+
+      #feedback-cards-container .card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
   </head>
 
   <body>
@@ -28,232 +65,370 @@
 
     <!-- loader div -->
     <div class="content">
- <!-- header section -->
- <nav>
-  <div class="nav-bar">
-      <i class='bx bx-menu sidebarOpen'></i>
-      <span class="logo navLogo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
+      <!-- header section -->
+      <nav>
+        <div class="nav-bar">
+          <i class="bx bx-menu sidebarOpen"></i>
+          <span class="logo navLogo"
+            >
+            <a href=""><img src="img/logo.png" alt="" style="width: 90px; height: 90px;"/>Plant Palace</a></span>
+          
 
-      <div class="menu">
-          <div class="logo-toggle">
-              <span class="logo"><a href=""><img src="img/logo.png" alt="">Plant Palace</a></span>
-              <i class='bx bx-x sidebarCloser'></i>
-          </div>
-          <ul class="nav-links">
+          <div class="menu">
+            <div class="logo-toggle">
+              <span class="logo"
+                ><a href=""
+                  ><img src="img/logo.png" alt="" />Plant Palace</a
+                ></span
+              >
+              <i class="bx bx-x sidebarCloser"></i>
+            </div>
+            <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <!-- Plants Dropdown -->
               <li class="dropdown">
-                  <a href="#">Plants</a>
-                  <ul class="dropdown-menu">
-                      <li><a href="indoor.html">Indoor Plants</a></li>
-                      <li><a href="outdoor.html">Outdoor Plants</a></li>
-                      <li><a href="flower.html">Flower Plants</a></li>
-                      <li><a href="climber.html">CLimbers Plants</a></li>
-                      <li><a href="ground.html">Ground Covers</a></li>
-                  </ul>
+                <a href="#">Plants</a>
+                <ul class="dropdown-menu">
+                  <li><a href="indoor.html">Indoor Plants</a></li>
+                  <li><a href="outdoor.html">Outdoor Plants</a></li>
+                  <li><a href="flower.html">Flower Plants</a></li>
+                  <li><a href="climber.html">CLimbers Plants</a></li>
+                  <li><a href="ground.html">Ground Covers</a></li>
+                </ul>
               </li>
               <!-- Pots Dropdown -->
               <li class="dropdown">
-                  <a href="#">Pots</a>
-                  <ul class="dropdown-menu">
-                      <li><a href="ceramic.html">Ceramic Pots</a></li>
-                      <li><a href="plastic.html">Plastic Pots</a></li>
-                      <li><a href="clay.html">Clay Pots</a></li>
-                      <li><a href="concrete.html">Concrete Pots</a></li>
-                  </ul>
+                <a href="#">Pots</a>
+                <ul class="dropdown-menu">
+                  <li><a href="ceramic.html">Ceramic Pots</a></li>
+                  <li><a href="plastic.html">Plastic Pots</a></li>
+                  <li><a href="clay.html">Clay Pots</a></li>
+                  <li><a href="concrete.html">Concrete Pots</a></li>
+                </ul>
               </li>
               <li><a href="seeds.html">Seeds</a></li>
               <li><a href="tools.html">Tools</a></li>
               <li><a href="feedback.html">Feedback</a></li>
               <li><a href="contact.html">Contact</a></li>
-              <li><a href="donate.html"><i class='bx bxs-donate-blood icon' style="font-size: 23px;" ></i></a></li>
-              <li><a href="cart.html"><i class='bx bx-shopping-bag icon' style="font-size: 23px;"></i></a></li>
-              <li><a href="login-signip.html"><i class='bx bxs-user-circle icon' style="font-size: 23px;" ></i></a></li>
-          </ul>
-      </div>
-
-      <div class="darkLight-searchBox">
-          <div class="dark-light">
-              <i class='bx bxs-moon moon '></i>
-              <i class='bx bxs-sun sun'></i>
+              <li>
+                <a href="donate.html"
+                  ><i
+                    class="bx bxs-donate-blood icon"
+                    style="font-size: 23px"
+                  ></i
+                ></a>
+              </li>
+              <li>
+                <a href="addCart.html"
+                  ><i
+                    class="bx bx-shopping-bag icon"
+                    style="font-size: 23px"
+                  ></i
+                ></a>
+              </li>
+              <li>
+                <a href="login-signip.html"
+                  ><i
+                    class="bx bxs-user-circle icon"
+                    style="font-size: 23px"
+                  ></i
+                ></a>
+              </li>
+            </ul>
           </div>
-          <div class="searchBox">
+
+          <div class="darkLight-searchBox">
+            <div class="dark-light">
+              <i class="bx bxs-moon moon"></i>
+              <i class="bx bxs-sun sun"></i>
+            </div>
+            <div class="searchBox">
               <div class="searchToggle">
-                  <i class='bx bx-x cancel'></i>
-                  <i class='bx bx-search search'></i>
+                <i class="bx bx-x cancel"></i>
+                <i class="bx bx-search search"></i>
               </div>
               <div class="search-field">
-                  <input type="text" placeholder="search....">
-                  <i class='bx bx-search'></i>
-              </div>            
-          </div>
-      </div>
-  </div>
-</nav>
-<!-- header section ends -->
-
-
-<!-- feedback start -->
-        <div class="container col-8" style="margin-top: 100px;">
-          <div class="row">
-            <div class="col-md-12">
-              <form
-                action="https://formspree.io/f/mgvwpynw"
-                method="POST"
-                enctype="multipart/form-data"
-                class="row g-3 needs-validation"
-                novalidate
-                target="_blank"
-              >
-                <div class="form-floating">
-                  <input
-                    type="text"
-                    required
-                    class="form-control"
-                    id="validationCustom01"
-                    placeholder="Name"
-                    required
-                    name="name"
-                    pattern="[a-z A-Z]{5,20}"
-                  />
-                  <label for="validationCustom01">Name</label>
-                  <div class="valid-feedback">Looks good!</div>
-                  <div class="invalid-feedback">Minimum 5 characters.</div>
-                </div>
-
-                <div class="col-md-12 form-floating">
-                  <input
-                    placeholder="E-mail"
-                    type="text"
-                    class="form-control"
-                    id="validationCustom01"
-                    value=""
-                    name="email"
-                    required
-                    pattern="^(?=.*[a-z])(?=.*[^a-zA-Z0-9@])(?=.*[@]).*$"
-                  />
-                  <div class="valid-feedback">Looks good!</div>
-                  <label for="validationCustom01" class="form-label"
-                    >E-mail</label
-                  >
-                  <div class="invalid-feedback">Enter valid E-mail.</div>
-                </div>
-
-            <div class="col-md-12 form-floating">
-                  <input
-                    placeholder="Please enter your comments"
-                    type="textarea"
-                    class="form-control"
-                    id="validationCustom02"
-                    value=""
-                    name="comments"
-                    required
-                    pattern="^[a-z A-Z.]{20,200}$"
-                  />
-                  <label for="validationCustom02" class="form-label"
-                    >Comments</label
-                  >
-                  <div class="valid-feedback">Looks good!</div>
-                  <div class="invalid-feedback">Minimum 20 characters.</div>
-                </div>
-               
-                
-                <div class="col-12">
-                    <div class="row">
-                      <div class="col-12 feed">
-                        <h3 class="animate__animated animate__flip  " style="margin-top: 20px; color:var(--text-color1)">Rate Us</h3>
-                        <span onclick="star(1)" class="star">★</span>
-                        <span onclick="star(2)" class="star">★</span>
-                        <span onclick="star(3)" class="star">★</span>
-                        <span onclick="star(4)" class="star">★</span>
-                        <span onclick="star(5)" class="star">★</span>
-                        <h3 id="output" style="color: red;">0/5</h3>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        value=""
-                        id="invalidCheck"
-                        required
-                      />
-                      <label style="color: var(--text-color1);" class="form-check-label" for="invalidCheck">
-                        Agree to terms and conditions
-                      </label>
-                      <div class="invalid-feedback">
-                        You must agree before submitting.
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div class="col-12 mb-5">
-                    <button class="btn btn-success w-100" type="submit">
-                      Submit form
-                    </button>
-                  </div>      
-                </form>
+                <input type="text" placeholder="search...." />
+                <i class="bx bx-search"></i>
+              </div>
             </div>
           </div>
         </div>
-        
-        <!-- feedback End --><div id="feedback-card" style="display: none;">
- 
+      </nav>
+      <!-- header section ends -->
 
-    <!-- Footer Section -->
-    <footer>
-      <div class="footer-content">
+      <!-- feedback start -->
+      <div class="container col-8" style="margin-top: 100px">
+        <div class="row">
+          <div class="col-md-12">
+            <form
+              id="feedback-form"
+              onsubmit="return submitForm(event)"
+              enctype="multipart/form-data"
+              class="row g-3 needs-validation"
+              novalidate
+              method="post"
+            >
+              <div class="form-floating">
+                <input
+                  type="text"
+                  required
+                  class="form-control"
+                  id="validationCustom01"
+                  placeholder="Name"
+                  required
+                  name="name"
+                  pattern="[a-z A-Z]{5,20}"
+                />
+                <label for="validationCustom01">Name</label>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Minimum 5 characters.</div>
+              </div>
+
+              <div class="col-md-12 form-floating">
+                <input
+                  placeholder="E-mail"
+                  type="email"
+                  class="form-control"
+                  id="validationCustom01"
+                  value=""
+                  name="email"
+                  required
+                  pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                />
+                <div class="valid-feedback">Looks good!</div>
+                <label for="validationCustom01" class="form-label"
+                  >E-mail</label
+                >
+                <div class="invalid-feedback">Enter valid E-mail.</div>
+              </div>
+
+              <div class="col-md-12 form-floating">
+                <textarea
+                  placeholder="Please enter your comments"
+                  class="form-control"
+                  id="validationCustom02"
+                  value=""
+                  name="comments"
+                  required
+                  pattern="^[a-z A-Z.]{20,200}$"
+                ></textarea>
+                <label for="validationCustom02" class="form-label"
+                  >Comments</label
+                >
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">enter message.</div>
+              </div>
+
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12 feed">
+                    <h3
+                      class="animate__animated animate__flip"
+                      style="margin-top: 20px; color: var(--text-color1)"
+                    >
+                      Rate Us
+                    </h3>
+                    <span onclick="star(1)" class="star">★</span>
+                    <span onclick="star(2)" class="star">★</span>
+                    <span onclick="star(3)" class="star">★</span>
+                    <span onclick="star(4)" class="star">★</span>
+                    <span onclick="star(5)" class="star">★</span>
+                    <h3 name id="output" style="color: red">0/5</h3>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="invalidCheck"
+                    required
+                  />
+                  <label
+                    id="check"
+                    style="color: var(--text-color1)"
+                    class="form-check-label"
+                    for="invalidCheck"
+                  >
+                    Agree to terms and conditions
+                  </label>
+                  <div class="invalid-feedback">
+                    You must agree before submitting.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mb-5">
+                <button class="btn btn-success w-100" type="submit">
+                  Submit form
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-8 mx-auto">
+            <!-- feedback card container -->
+            <div
+              class="card"
+              id="feedback-cards-container"
+              style="
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                background-color: transparent;
+                border: none;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- feedback End -->
+      <script>
+        const form = document.getElementById("feedback-form");
+        const feedbackCardsContainer = document.getElementById(
+          "feedback-cards-container"
+        );
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const name = formData.get("name");
+          const email = formData.get("email");
+          const comments = formData.get("comments");
+          const rating = document
+            .getElementById("output")
+            .textContent.split("/")[0];
+          const check = document.getElementById("invalidCheck").checked;
+
+          // Check if any of the fields are empty
+          if (!name || !email || !comments || !rating || !check) {
+            alert("Please fill in all fields before submitting");
+            return;
+          }
+
+          // Create a new card element
+          const card = document.createElement("div");
+          card.className = "card mb-3";
+
+          // Create card body element
+          const cardBody = document.createElement("div");
+          cardBody.className = "card-body";
+
+          // Create feedback elements
+          const feedbackName = document.createElement("p");
+          feedbackName.textContent = `Name: ${name}`;
+
+          const feedbackMessage = document.createElement("p");
+          feedbackMessage.textContent = `Message: ${comments}`;
+
+          const feedbackMail = document.createElement("p");
+          feedbackMail.textContent = `Email: ${email}`;
+
+          const feedbackRating = document.createElement("p");
+          feedbackRating.textContent = `Rating: ${rating} STARS`;
+
+          // Append feedback elements to card body
+          cardBody.appendChild(feedbackName);
+          cardBody.appendChild(feedbackMail);
+          cardBody.appendChild(feedbackMessage);
+          cardBody.appendChild(feedbackRating);
+
+          // Append card body to card
+          card.appendChild(cardBody);
+
+          // Append card to container
+          feedbackCardsContainer.appendChild(card);
+
+          // Reset the form fields
+          form.reset();
+
+          // Reset the rating output
+          document.getElementById("output").textContent = "0/5";
+
+        //   // Reset the form fields' validation state
+        //   const formFields = form.querySelectorAll(".form-control");
+        //   formFields.forEach((field) => {
+        //     field.classList.remove("invalid-feedback");
+        //   });
+
+          // Reset all invalid-feedback elements
+          const invalidFeedbacks = form.querySelectorAll(".invalid-feedback");
+          invalidFeedbacks.forEach((feedback) => {
+            feedback.textContent = "";
+            feedback.style.display = "none";
+
+          });
+
+          // Reset the star colors
+          const stars = document.querySelectorAll(".star");
+          stars.forEach((star) => {
+            star.style.display = "";
+          });
+        });
+      </script>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-content">
           <div class="footer-section about">
-              <h2>About Us</h2>
-              <p>Plant Palace is your one-stop shop for all things green! From vibrant plants to stylish pots and essential gardening tools, we have everything you need to create your own indoor paradise.</p>
+            <h2>About Us</h2>
+            <p>
+              Plant Palace is your one-stop shop for all things green! From
+              vibrant plants to stylish pots and essential gardening tools, we
+              have everything you need to create your own indoor paradise.
+            </p>
           </div>
           <div class="footer-section links">
-              <h2>Quick Links</h2>
-              <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="seeds.html">Seeds</a></li>
-                  <li><a href="tools.html">Tools</a></li>
-                  <li><a href="feedback.html">Feedback</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="donate.html">Donation</a></li>
-              </ul>
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="seeds.html">Seeds</a></li>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="donate.html">Donation</a></li>
+            </ul>
           </div>
           <div class="footer-section contact">
-              <h2>Contact Us</h2>
-              <p><i class='bx bxs-phone'></i> +123-456-7890</p>
-              <p><i class='bx bxs-envelope'></i> info@plantpalace.com</p>
-              <p><i class='bx bxs-map'></i> 123 Street, ABC City, XYZ</p>
-              <div class="socials">
-                  <a href="#"><i class='bx bxl-facebook'></i></a>
-                  <a href="#"><i class='bx bxl-twitter'></i></a>
-                  <a href="#"><i class='bx bxl-instagram'></i></a>
-                  <a href="#"><i class='bx bxl-linkedin'></i></a>
-              </div>
+            <h2>Contact Us</h2>
+            <p><i class="bx bxs-phone"></i> +123-456-7890</p>
+            <p><i class="bx bxs-envelope"></i> info@plantpalace.com</p>
+            <p><i class="bx bxs-map"></i> 123 Street, ABC City, XYZ</p>
+            <div class="socials">
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+              <a href="#"><i class="bx bxl-linkedin"></i></a>
+            </div>
           </div>
-      </div>
-      <div class="footer-bottom">
+        </div>
+        <div class="footer-bottom">
           <p>&copy; 2024 Plant Palace | All Rights Reserved</p>
-      </div>
-  </footer>
-  <!-- footer section ends -->
+        </div>
+      </footer>
+      <!-- footer section ends -->
 
-<!-- loader div end -->
-      </div>
-<!-- customization js link -->
+      <!-- loader div end -->
+    </div>
+    <!-- customization js link -->
     <script src="js/contact.js"></script>
     <script src="js/star.js"></script>
     <script src="js/script.js"></script>
 
-
     <!-- chatbot cdn link -->
     <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
     <script src="https://mediafiles.botpress.cloud/4575466c-91fe-413b-a908-42f659d5d234/webchat/v2.1/config.js"></script>
-  
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
