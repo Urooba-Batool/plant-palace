@@ -35,6 +35,9 @@ body.dark{
 }
 
 /* =============================== header section =========================================== */
+.error{
+     color: red;   
+}
 nav{
     position: fixed;
     top: 0;
